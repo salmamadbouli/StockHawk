@@ -15,4 +15,7 @@
     <string name="stock_change_rate_description">معدل تغير السهم</string>
     <string name="add_stock_description">اضف سهم جديد من هنا</string>
     <string name="error_message_description">خطأ في تحميل معلومات الاسهم</string>
+    <string name="empty_quotes_list">لا يوجد اسهم</string>
+    <string name="graph_description">شكل توضيحي لتغيير السهم</string>
+    <string name="title_widget_stocks">الاسهم</string>
 </resources>

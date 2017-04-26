@@ -45,6 +45,11 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             protected Stock doInBackground(String... strings) {
                 try {
+
+                    Calendar from = Calendar.getInstance();
+                    Calendar to = Calendar.getInstance();
+                    from.add(Calendar.YEAR, -5);
+
                     stock = YahooFinance.get(symbol, true);
                     stockHistQuotes = stock.getHistory();
                 } catch (IOException e) {
@@ -67,8 +72,7 @@ public class DetailActivity extends AppCompatActivity {
                 for (HistoricalQuote h : stockHistQuotes) {
                     entries.add(new Entry(Float.valueOf(h.getDate().get(Calendar.MONTH)), Float.valueOf(String.valueOf(h.getHigh()))));
                 }
-
-                LineDataSet dataSet = new LineDataSet(entries, "Stock price");
+                LineDataSet dataSet = new LineDataSet(entries, "Stock price in USD");
                 LineData lineData = new LineData(dataSet);
                 chart.setData(lineData);
                 chart.invalidate();

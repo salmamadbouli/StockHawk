@@ -73,16 +73,18 @@ public final class QuoteSyncJob {
 
 
                 Stock stock = quotes.get(symbol);
-                StockQuote quote = stock.getQuote();
+                StockQuote quote = null;
+                if (stock != null)
+                    quote = stock.getQuote();
 
                 // Fixing the crash will happen when unavailable stock is added
-                if (quote.getPrice() != null) {
+                if (quote != null && stock.getQuote().getPrice() != null) {
                     float price = quote.getPrice().floatValue();
                     float change = quote.getChange().floatValue();
                     float percentChange = quote.getChangeInPercent().floatValue();
 
-                // WARNING! Don't request historical data for a stock that doesn't exist!
-                // The request will hang forever X_x
+                    // WARNING! Don't request historical data for a stock that doesn't exist!
+                    // The request will hang forever X_x
                     List<HistoricalQuote> history = stock.getHistory(from, to, Interval.WEEKLY);
 
                     StringBuilder historyBuilder = new StringBuilder();
@@ -104,9 +106,12 @@ public final class QuoteSyncJob {
                     quoteCV.put(Contract.Quote.COLUMN_HISTORY, historyBuilder.toString());
 
                     quoteCVs.add(quoteCV);
+                } else {
+                    PrefUtils.removeStock(context, symbol);
                 }
 
             }
+
 
             context.getContentResolver()
                     .bulkInsert(
@@ -170,4 +175,5 @@ public final class QuoteSyncJob {
 
         }
     }
+
 }
