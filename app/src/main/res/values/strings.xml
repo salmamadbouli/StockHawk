@@ -31,5 +31,9 @@
 
     <string name="toast_stock_added_no_connectivity">Symbol %s added. Will refresh when network available.</string>
     <string name="toast_no_connectivity">Will refresh when network available.</string>
-
+    <string name="stock_quote_symbol_description">Stock Quote Symbol</string>
+    <string name="stock_price_description">Stock price</string>
+    <string name="stock_change_rate_description">Stock Change rate</string>
+    <string name="add_stock_description">Add new Stock quote</string>
+    <string name="error_message_description">Something went wrong while loading stocks information</string>
 </resources>
