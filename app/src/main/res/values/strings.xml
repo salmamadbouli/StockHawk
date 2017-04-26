@@ -36,4 +36,6 @@
     <string name="stock_change_rate_description">Stock Change rate</string>
     <string name="add_stock_description">Add new Stock quote</string>
     <string name="error_message_description">Something went wrong while loading stocks information</string>
+    <string name="empty_quotes_list">No stocks available</string>
+    <string name="title_widget_stocks">Stocks</string>
 </resources>
