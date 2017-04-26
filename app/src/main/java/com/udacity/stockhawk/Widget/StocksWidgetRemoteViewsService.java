@@ -15,9 +15,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-/**
- * Created by abdelhadi madbouli on 26/04/2017.
- */
+
 
 public class StocksWidgetRemoteViewsService extends RemoteViewsService {
     public final String LOG_TAG = StocksWidgetRemoteViewsService.class.getSimpleName();
