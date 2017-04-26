@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dialog_title">أضف سهم جديد</string>
+    <string name="dialog_hint">مثال اسم الرمز <xliff:g>(e.g. GOOG)</xliff:g></string>
+    <string name="dialog_cancel">إلغاء</string>
+    <string name="dialog_add">إضافه</string>
+
+    <string name="error_no_network">عذرا، لا يوجد اتصال بالانترنت! سنحاول تحميل اسعار الاسهم عند اتاحه شبكه الانترنت</string>
+    <string name="error_no_stocks">لاتوجد اسهم مضافه، اضغط علي الزر لاضافه سهم جديد</string>
+
+
+    <string name="toast_no_connectivity">سوف نحاول اعاده التحميل فور اتاحه خدمه الانترنت</string>
+    <string name="stock_quote_symbol_description">Stock Quote Symbol</string>
+    <string name="stock_price_description">سعر السهم</string>
+    <string name="stock_change_rate_description">معدل تغير السهم</string>
+    <string name="add_stock_description">اضف سهم جديد من هنا</string>
+    <string name="error_message_description">خطأ في تحميل معلومات الاسهم</string>
+</resources>
