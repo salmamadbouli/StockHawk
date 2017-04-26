@@ -9,6 +9,7 @@ import android.widget.RemoteViewsService;
 
 import com.udacity.stockhawk.R;
 import com.udacity.stockhawk.data.Contract;
+import com.udacity.stockhawk.ui.MainActivity;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -61,7 +62,7 @@ public class StocksWidgetRemoteViewsService extends RemoteViewsService {
                 final long identityToken = Binder.clearCallingIdentity();
 
                 data = getContentResolver().query(Contract.Quote.URI,
-                        QUOTE_COLUMNS, null, null, null);
+                        QUOTE_COLUMNS, null, null,  Contract.Quote.COLUMN_SYMBOL);
 
                 Binder.restoreCallingIdentity(identityToken);
             }
@@ -108,7 +109,10 @@ public class StocksWidgetRemoteViewsService extends RemoteViewsService {
                 views.setTextViewText(R.id.change, change);
 
                 final Intent fillInIntent = new Intent();
-
+                fillInIntent.putExtra(MainActivity.EXTRA_STOCK_SYMBOL, symbol);
+                views.setOnClickFillInIntent(R.id.widget_list_item, fillInIntent);
+                if(position %2 == 0)
+                    views.setInt(R.id.widget_list_item, "setBackgroundResource", R.drawable.listitem_background);
 
                 return views;
             }
